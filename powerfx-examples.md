@@ -128,3 +128,36 @@ Check the form's validation and data-source configuration before using this exam
 - Formula argument separators may vary with regional settings.
 - Test examples in a development environment before using them in production.
 - These examples are learning references, not a complete production solution.
+
+---
+
+## Blank-Safe Gallery Search
+
+### Goal
+
+Handle an empty or whitespace-only search input separately from a non-empty search query.
+
+### Example formula
+
+```powerfx
+If(
+    IsBlank(Trim(txtSearch.Text)),
+    Employees,
+    Filter(
+        Employees,
+        StartsWith(FullName, Trim(txtSearch.Text))
+    )
+)
+```
+
+### Expected behaviour
+
+- Empty search: return the Employees data source.
+- Whitespace-only search: return the Employees data source.
+- Text search: return records whose FullName begins with the entered text.
+
+### Limitations
+
+- Confirm that Employees and FullName match the actual app's data source and column names.
+- Check delegation warnings for the connected data source.
+- This formula is an illustrative example and has not been runtime-tested in Power Apps Studio.
