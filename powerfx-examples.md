@@ -104,6 +104,22 @@ IfError(
 )
 ```
 
+---
+
+## Official Microsoft References
+
+Use these official resources to verify Power Fx formulas and understand delegation behaviour.
+
+- [StartsWith function](https://learn.microsoft.com/en-us/power-platform/power-fx/reference/function-startswith)
+- [Filter and Search functions](https://learn.microsoft.com/en-us/power-platform/power-fx/reference/function-filter-lookup)
+- [Delegation overview](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/delegation-overview)
+
+### Verification notes
+
+- Confirm function syntax and argument names against the official documentation.
+- Check delegation support for the specific connected data source.
+- Runtime validation of the examples is pending until they are tested in Power Apps Studio.
+
 Check the form's validation and data-source configuration before using this example.
 
 ## Notes
