@@ -68,3 +68,29 @@ The examples must not be described as runtime-tested until the checks below have
 
 - Power Fx formula reference: https://learn.microsoft.com/en-us/power-platform/power-fx/formula-reference-canvas-apps
 - Power Fx error handling: https://learn.microsoft.com/en-us/power-platform/power-fx/error-handling
+
+## Power Fx Gallery Search — Test Record
+
+**Formula under review:** `Filter(Employees, StartsWith(FullName, txtSearch.Text))`
+
+**Environment:** Power Apps Studio not yet available.
+
+**Overall status:** Pending runtime validation.
+
+| Test case | Search input | Expected result | Actual result | Status |
+|---|---|---|---|---|
+| Prefix match | Moh | Names beginning with Moh are returned | Not tested | Pending |
+| Middle-text search | Hash | Names containing Hash in the middle are not matched by StartsWith alone | Not tested | Pending |
+| No match | XYZ123 | No matching records | Not tested | Pending |
+| Empty input | Blank | Behaviour to be verified in the app | Not tested | Pending |
+
+### Validation checklist
+
+- [ ] Confirm the `Employees` data source exists.
+- [ ] Confirm the `FullName` column and `txtSearch` input control names.
+- [ ] Verify formula syntax in Power Apps Studio.
+- [ ] Check delegation warnings for the selected data source.
+- [ ] Execute each test and record the actual result.
+- [ ] Update this document if the observed results differ from expectations.
+
+**Note:** These are planned tests, not completed test results.
