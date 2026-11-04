@@ -28,6 +28,28 @@ If(
 This disables the button when the name input is empty.
 
 ## 3. Search a Gallery
+Filter(
+    Employees,
+    StartsWith(FullName, txtSearch.Text)
+)
+### Search behaviour and limitations
+
+The `StartsWith` function matches text at the beginning of the specified column. It does not search for text appearing only in the middle of a name.
+
+Example, for `FullName = "Mohammed Hashmath"`:
+
+- Search for `Moh` — matches.
+- Search for `Hash` — does not match.
+- An empty search input may return all records because `StartsWith` matches an empty prefix.
+
+### Delegation considerations
+
+Delegation support depends on the connected data source. Check Power Apps Studio for delegation warnings and verify that the formula retrieves the expected records for the intended data volume.
+
+### Validation status
+
+This example has been reviewed against the official Power Fx documentation but has not yet been runtime-tested in Power Apps.
+
 
 **Control:** Gallery  
 **Property:** Items
